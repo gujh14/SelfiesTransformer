@@ -87,7 +87,7 @@ class SelfiesTransformer(nn.Module):
         self.pos_embedding = nn.Parameter(torch.randn(1, max_length + 1, dim)) # learnable
         self.dropout = nn.Dropout(emb_dropout)
 
-        # self.to_latent = nn.Identity() # why?
+        # self.to_latent = nn.Identity() # is this necessary?
 
         self.transformer = Transformer(dim, depth, heads, dim_head, mlp_dim, dropout)
 
